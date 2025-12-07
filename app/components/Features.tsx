@@ -1,0 +1,137 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Link, ImageIcon, FileText, Globe } from "lucide-react";
+
+const features = [
+  {
+    icon: Link,
+    title: "Decentralized Profiles",
+    description: "Your identity is minted on-chain — verifiable, portable, permanent.",
+    gradient: "from-purple-500 to-violet-600",
+  },
+  {
+    icon: ImageIcon,
+    title: "NFT Avatars",
+    description: "Use any NFT you own as your authenticated avatar.",
+    gradient: "from-pink-500 to-rose-600",
+  },
+  {
+    icon: FileText,
+    title: "On-Chain Posts",
+    description: "Publish content tied directly to your identity, not a platform.",
+    gradient: "from-cyan-500 to-blue-600",
+  },
+  {
+    icon: Globe,
+    title: "Portable Social Graph",
+    description: "Your followers belong to you, not an app. Take them anywhere.",
+    gradient: "from-emerald-500 to-teal-600",
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
+export default function Features() {
+  return (
+    <section className="section py-24 px-6 relative">
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Why You&apos;ll <span className="gradient-text">Want It</span>
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Everything you need to own your digital identity
+          </p>
+        </motion.div>
+        
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+                className="glass-card p-6 group cursor-pointer relative overflow-hidden"
+              >
+                {/* Hover glow effect */}
+                <motion.div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                />
+                
+                {/* Icon container */}
+                <motion.div 
+                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-4`}
+                  whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="w-full h-full rounded-xl bg-[#0a0a0f] flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                </motion.div>
+                
+                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                  {feature.description}
+                </p>
+                
+                {/* Bottom line animation */}
+                <motion.div
+                  className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${feature.gradient}`}
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
