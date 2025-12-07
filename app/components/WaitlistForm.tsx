@@ -30,7 +30,7 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="glass-card p-6 max-w-md mx-auto relative overflow-hidden"
+          className="glass-card p-4 sm:p-6 max-w-md mx-auto relative overflow-hidden"
         >
           {/* Celebration particles */}
           {[...Array(12)].map((_, i) => (
@@ -68,17 +68,17 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-4xl mb-3"
             >
-              <CheckCircle className="w-12 h-12 mx-auto text-green-400" />
+              <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 mx-auto text-green-400" />
             </motion.div>
-            <p className="text-white font-medium text-lg">You&apos;re on the list!</p>
-            <p className="text-gray-400 text-sm mt-1">We&apos;ll notify you when we go live.</p>
+            <p className="text-white font-medium text-base sm:text-lg">You&apos;re on the list!</p>
+            <p className="text-gray-400 text-xs sm:text-sm mt-1">We&apos;ll notify you when we go live.</p>
           </motion.div>
         </motion.div>
       ) : (
         <motion.form
           key="form"
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md mx-auto px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -88,7 +88,7 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
             animate={isFocused ? { scale: 1.02 } : { scale: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+            <Mail className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
             <input
               type="email"
               placeholder="Enter your email"
@@ -96,7 +96,7 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
               onChange={(e) => setEmail(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
-              className="input-field with-icon w-full"
+              className="input-field with-icon w-full text-sm sm:text-base"
               required
             />
             <AnimatePresence>
@@ -116,12 +116,12 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
           
           <motion.button
             type="submit"
-            className="btn-primary flex items-center justify-center gap-2 group whitespace-nowrap"
+            className="btn-primary flex items-center justify-center gap-2 group whitespace-nowrap text-sm sm:text-base py-3 sm:py-3.5"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Sparkles className="w-4 h-4" />
-            Join Waitlist
+            <span className="hidden xs:inline">Join</span> Waitlist
             <motion.div
               className="inline-block"
               animate={{ x: [0, 4, 0] }}

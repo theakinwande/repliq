@@ -12,7 +12,7 @@ const benefits = [
 
 export default function EarlyAccess() {
   return (
-    <section className="section py-24 px-6 relative">
+    <section className="section py-16 sm:py-24 px-4 sm:px-6 relative">
       <motion.div 
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -21,7 +21,7 @@ export default function EarlyAccess() {
         transition={{ duration: 0.8 }}
       >
         <motion.div 
-          className="glass-card p-8 md:p-12 relative overflow-hidden"
+          className="glass-card p-6 sm:p-8 md:p-12 relative overflow-hidden"
           whileHover={{ boxShadow: "0 0 60px rgba(139, 92, 246, 0.15)" }}
           transition={{ duration: 0.5 }}
         >
@@ -45,7 +45,7 @@ export default function EarlyAccess() {
           {/* Content */}
           <div className="relative z-10">
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-white text-center mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -54,13 +54,13 @@ export default function EarlyAccess() {
               Why Join <span className="gradient-text">Early</span>?
             </motion.h2>
             
-            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
                   <motion.div 
                     key={index}
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-3 sm:gap-4 group"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -68,15 +68,15 @@ export default function EarlyAccess() {
                     whileHover={{ x: 5 }}
                   >
                     <motion.div 
-                      className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center flex-shrink-0 relative"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center flex-shrink-0 relative"
                       whileHover={{ scale: 1.1, rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
                       <div className="absolute inset-0.5 rounded-full bg-[#0a0a0f] flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-purple-400" />
+                        <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
                       </div>
                     </motion.div>
-                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    <span className="text-gray-300 text-sm sm:text-base group-hover:text-white transition-colors duration-300">
                       {benefit.text}
                     </span>
                     <motion.div
@@ -93,8 +93,8 @@ export default function EarlyAccess() {
           </div>
 
           {/* Corner decorations */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-bl-full" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-cyan-500/10 to-transparent rounded-tr-full" />
+          <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-bl-full" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-cyan-500/10 to-transparent rounded-tr-full" />
         </motion.div>
       </motion.div>
     </section>

@@ -6,7 +6,7 @@ import WaitlistForm from "./WaitlistForm";
 
 export default function FinalCTA() {
   return (
-    <section className="section py-24 px-6 relative overflow-hidden">
+    <section className="section py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
       {/* Animated background lines */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(5)].map((_, i) => (
@@ -43,19 +43,19 @@ export default function FinalCTA() {
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 text-purple-400 text-sm mb-8"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-purple-500/30 text-purple-400 text-xs sm:text-sm mb-6 sm:mb-8"
         >
           <motion.div
             animate={{ x: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </motion.div>
           Limited spots available
         </motion.div>
         
         <motion.h2 
-          className="text-3xl md:text-5xl font-bold text-white mb-6"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -75,7 +75,7 @@ export default function FinalCTA() {
         </motion.h2>
         
         <motion.p 
-          className="text-xl text-gray-400 mb-10"
+          className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 px-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function FinalCTA() {
 
       {/* Large glowing orb */}
       <motion.div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[200px] sm:h-[300px] md:h-[400px] pointer-events-none"
         style={{
           background: "radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%)",
         }}

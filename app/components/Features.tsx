@@ -55,11 +55,11 @@ const cardVariants = {
 
 export default function Features() {
   return (
-    <section className="section py-24 px-6 relative">
+    <section className="section py-16 sm:py-24 px-4 sm:px-6 relative">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl" />
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -68,18 +68,18 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
             Why You&apos;ll <span className="gradient-text">Want It</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base px-2">
             Everything you need to own your digital identity
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,7 +95,7 @@ export default function Features() {
                   y: -10,
                   transition: { duration: 0.3 }
                 }}
-                className="glass-card p-6 group cursor-pointer relative overflow-hidden"
+                className="glass-card p-5 sm:p-6 group cursor-pointer relative overflow-hidden"
               >
                 {/* Hover glow effect */}
                 <motion.div
@@ -104,19 +104,19 @@ export default function Features() {
                 
                 {/* Icon container */}
                 <motion.div 
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-4`}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-3 sm:mb-4`}
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 >
                   <div className="w-full h-full rounded-xl bg-[#0a0a0f] flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </motion.div>
                 
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-gray-400 text-sm sm:text-base group-hover:text-gray-300 transition-colors duration-300">
                   {feature.description}
                 </p>
                 

@@ -77,7 +77,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
   overflow-x: hidden;
 }
 
@@ -153,13 +153,22 @@ body {
   background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
   color: white;
   font-weight: 600;
-  padding: 14px 32px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  font-size: 13px;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
 }
 
 .btn-primary::before {
@@ -191,16 +200,30 @@ body {
 .input-field {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 14px 20px;
+  border-radius: 10px;
+  padding: 10px 14px;
   color: var(--foreground);
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease;
   outline: none;
 }
 
+@media (min-width: 640px) {
+  .input-field {
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+
 .input-field.with-icon {
-  padding-left: 48px;
+  padding-left: 40px;
+}
+
+@media (min-width: 640px) {
+  .input-field.with-icon {
+    padding-left: 48px;
+  }
 }
 
 .input-field:focus {
@@ -221,13 +244,21 @@ body {
   );
   border: 1px solid rgba(139, 92, 246, 0.3);
   border-radius: 100px;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 6px 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--primary-light);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+}
+
+@media (min-width: 640px) {
+  .badge {
+    padding: 8px 16px;
+    font-size: 14px;
+    gap: 8px;
+  }
 }
 
 /* Fade in animation */

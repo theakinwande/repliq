@@ -5,7 +5,7 @@ import { Layers } from "lucide-react";
 
 export default function WhatIsRepliq() {
   return (
-    <section className="section py-24 px-6 relative overflow-hidden">
+    <section className="section py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
       {/* Animated line decoration */}
       <motion.div
         className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"
@@ -27,13 +27,13 @@ export default function WhatIsRepliq() {
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, type: "spring" }}
-          className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 mb-6"
+          className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 mb-4 sm:mb-6"
         >
-          <Layers className="w-8 h-8 text-purple-400" />
+          <Layers className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
         </motion.div>
         
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-white mb-6"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,12 +48,12 @@ export default function WhatIsRepliq() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto px-2">
             Repliq is a Web3 identity layer that lets you create a portable on-chain profile you truly own.
           </p>
           
           <motion.div 
-            className="my-8 flex items-center justify-center gap-4 flex-wrap"
+            className="my-6 sm:my-8 flex items-center justify-center gap-2 sm:gap-4 flex-wrap px-2"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function WhatIsRepliq() {
             {["No platforms", "No algorithms", "No lock-in"].map((text, i) => (
               <motion.span
                 key={text}
-                className="px-4 py-2 rounded-full border border-purple-500/30 text-gray-300 text-sm font-medium"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-purple-500/30 text-gray-300 text-xs sm:text-sm font-medium"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function WhatIsRepliq() {
           </motion.div>
           
           <motion.p 
-            className="text-xl text-gray-300 font-medium"
+            className="text-base sm:text-lg md:text-xl text-gray-300 font-medium"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

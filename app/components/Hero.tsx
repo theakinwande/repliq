@@ -30,7 +30,7 @@ const particles = [
 
 export default function Hero() {
   return (
-    <section className="section min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    <section className="section min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 overflow-hidden">
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((particle, i) => (
@@ -56,18 +56,18 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-6"
+          className="mb-4 sm:mb-6"
         >
           <motion.span 
-            className="badge mb-6 inline-flex items-center gap-2"
+            className="badge mb-4 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs py-1.5 px-3 sm:py-2 sm:px-4"
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(139, 92, 246, 0.4)" }}
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             Pre-Launch
           </motion.span>
         </motion.div>
@@ -76,7 +76,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-6 leading-tight"
         >
           <motion.span 
             className="gradient-text inline-block"
@@ -102,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto"
+          className="text-sm sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-10 max-w-2xl mx-auto px-2"
         >
           A new way to own your profile, your avatar, your reputation — all on-chain.
         </motion.p>
@@ -114,7 +114,7 @@ export default function Hero() {
         >
           <WaitlistForm variant="hero" />
           <motion.p 
-            className="text-gray-500 text-sm mt-4"
+            className="text-gray-500 text-xs sm:text-sm mt-4 px-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
@@ -125,7 +125,7 @@ export default function Hero() {
 
         {/* Glowing orb behind hero */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none -z-10"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none -z-10"
           style={{
             background: "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%)",
           }}

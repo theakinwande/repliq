@@ -19,7 +19,7 @@ export default function Navbar() {
           transition={{ type: "spring", stiffness: 400 }}
         >
           <motion.div 
-            className="w-10 h-10 flex items-center justify-center"
+            className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
             animate={{ 
               filter: [
                 "drop-shadow(0 0 8px rgba(6, 67, 215, 0.3))",
@@ -32,15 +32,15 @@ export default function Navbar() {
             <Image 
               src="/replicq.svg" 
               alt="Repliq logo" 
-              width={40} 
-              height={40}
-              className="w-auto h-8"
+              width={120} 
+              height={120}
+              className="w-auto h-20 sm:h-24 brightness-0 invert"
             />
           </motion.div>
         </motion.div>
         
         <motion.div 
-          className="badge"
+          className="badge text-[9px] sm:text-[10px] py-1 px-2.5 sm:py-1.5 sm:px-3"
           animate={{ 
             borderColor: [
               "rgba(139, 92, 246, 0.3)",
@@ -51,11 +51,11 @@ export default function Navbar() {
           transition={{ duration: 3, repeat: Infinity }}
         >
           <motion.span 
-            className="w-2 h-2 rounded-full bg-green-400"
+            className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-green-400"
             animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
-          <Rocket className="w-3.5 h-3.5" />
+          <Rocket className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
           Coming Soon
         </motion.div>
       </div>
