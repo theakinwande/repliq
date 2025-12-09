@@ -62,13 +62,13 @@ export default function WhatIsRepliq() {
             {["No platforms", "No algorithms", "No lock-in"].map((text, i) => (
               <motion.span
                 key={text}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-purple-500/30 text-gray-300 text-xs sm:text-sm font-medium"
+                className="badge backdrop-blur-md"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7 + i * 0.1 }}
                 whileHover={{ 
-                  borderColor: "rgba(139, 92, 246, 0.6)",
+                  scale: 1.05,
                   boxShadow: "0 0 20px rgba(139, 92, 246, 0.3)"
                 }}
               >

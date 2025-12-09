@@ -10,53 +10,54 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="section fixed top-0 left-0 right-0 z-50 px-6 py-4"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="absolute inset-0 bg-[#050508]/70 backdrop-blur-xl border-b border-white/5 shadow-lg" />
+      <div className="max-w-6xl mx-auto flex items-center justify-between relative z-10">
         <motion.div 
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
           <motion.div 
-            className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+            className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center"
             animate={{ 
               filter: [
-                "drop-shadow(0 0 8px rgba(6, 67, 215, 0.3))",
-                "drop-shadow(0 0 16px rgba(6, 67, 215, 0.6))",
-                "drop-shadow(0 0 8px rgba(6, 67, 215, 0.3))"
+                "drop-shadow(0 0 8px rgba(139, 92, 246, 0.3))",
+                "drop-shadow(0 0 16px rgba(139, 92, 246, 0.5))",
+                "drop-shadow(0 0 8px rgba(139, 92, 246, 0.3))"
               ]
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 3, repeat: Infinity }}
           >
             <Image 
               src="/replicq.svg" 
               alt="Repliq logo" 
-              width={120} 
-              height={120}
-              className="w-auto h-20 sm:h-24 brightness-0 invert"
+              width={100} 
+              height={100}
+              className="w-auto h-16 sm:h-20 brightness-0 invert"
             />
           </motion.div>
         </motion.div>
         
         <motion.div 
-          className="badge text-[9px] sm:text-[10px] py-1 px-2.5 sm:py-1.5 sm:px-3"
+          className="badge backdrop-blur-md bg-white/5 border-white/10 text-[9px] sm:text-[10px] py-1 px-2.5 sm:py-1.5 sm:px-3"
           animate={{ 
             borderColor: [
-              "rgba(139, 92, 246, 0.3)",
-              "rgba(6, 182, 212, 0.5)",
-              "rgba(139, 92, 246, 0.3)"
+              "rgba(255, 255, 255, 0.1)",
+              "rgba(139, 92, 246, 0.4)",
+              "rgba(255, 255, 255, 0.1)"
             ]
           }}
           transition={{ duration: 3, repeat: Infinity }}
         >
           <motion.span 
-            className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-green-400"
-            animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-1.5 rounded-full bg-emerald-400 box-shadow-glow"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
           />
           <Rocket className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-          Coming Soon
+          <span className="tracking-wide">Coming Soon</span>
         </motion.div>
       </div>
     </motion.nav>

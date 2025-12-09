@@ -92,31 +92,31 @@ export default function Features() {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ 
-                  y: -10,
+                  y: -5,
                   transition: { duration: 0.3 }
                 }}
-                className="glass-card p-5 sm:p-6 group cursor-pointer relative overflow-hidden"
+                className="glass-card p-6 sm:p-8 group cursor-pointer relative overflow-hidden flex flex-col items-start h-full"
               >
                 {/* Hover glow effect */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                 />
                 
                 {/* Icon container */}
                 <motion.div 
-                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-3 sm:mb-4`}
-                  whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} p-[1px] mb-4 sm:mb-6`}
+                  whileHover={{ rotate: [0, -5, 5, 0], scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <div className="w-full h-full rounded-xl bg-[#0a0a0f] flex items-center justify-center">
+                  <div className="w-full h-full rounded-2xl bg-[#0a0a0f] flex items-center justify-center">
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </motion.div>
                 
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 text-sm sm:text-base group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {feature.description}
                 </p>
                 
@@ -125,7 +125,7 @@ export default function Features() {
                   className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${feature.gradient}`}
                   initial={{ width: 0 }}
                   whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4 }}
                 />
               </motion.div>
             );

@@ -21,13 +21,12 @@ export default function EarlyAccess() {
         transition={{ duration: 0.8 }}
       >
         <motion.div 
-          className="glass-card p-6 sm:p-8 md:p-12 relative overflow-hidden"
-          whileHover={{ boxShadow: "0 0 60px rgba(139, 92, 246, 0.15)" }}
+          className="glass-card p-6 sm:p-8 md:p-12 relative overflow-hidden group cursor-pointer"
           transition={{ duration: 0.5 }}
         >
           {/* Animated border gradient */}
           <motion.div
-            className="absolute inset-0 rounded-2xl"
+            className="absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"
             style={{
               background: "linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent)",
               backgroundSize: "200% 100%",

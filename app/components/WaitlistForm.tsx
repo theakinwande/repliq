@@ -11,13 +11,19 @@ interface WaitlistFormProps {
 export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setIsSubmitted(true);
-      setEmail("");
+      setIsLoading(true);
+      // Simulate API call
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsSubmitted(true);
+        setEmail("");
+      }, 1500);
     }
   };
 
@@ -96,8 +102,9 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
               onChange={(e) => setEmail(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
-              className="input-field with-icon w-full text-sm sm:text-base"
+              className="input-field with-icon w-full text-sm sm:text-base disabled:opacity-50"
               required
+              disabled={isLoading}
             />
             <AnimatePresence>
               {isFocused && (
@@ -116,19 +123,30 @@ export default function WaitlistForm({ variant = "hero" }: WaitlistFormProps) {
           
           <motion.button
             type="submit"
-            className="btn-primary flex items-center justify-center gap-2 group whitespace-nowrap text-sm sm:text-base py-3 sm:py-3.5"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="btn-primary flex items-center justify-center gap-2 group whitespace-nowrap text-sm sm:text-base py-3 sm:py-3.5 disabled:opacity-70 disabled:cursor-not-allowed"
+            whileHover={!isLoading ? { scale: 1.05 } : {}}
+            whileTap={!isLoading ? { scale: 0.95 } : {}}
+            disabled={isLoading}
           >
-            <Sparkles className="w-4 h-4" />
-            <span className="hidden xs:inline">Join</span> Waitlist
-            <motion.div
-              className="inline-block"
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <ArrowRight className="w-4 h-4" />
-            </motion.div>
+            {isLoading ? (
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+              />
+            ) : (
+              <>
+                <Sparkles className="w-4 h-4" />
+                <span className="hidden xs:inline">Join</span> Waitlist
+                <motion.div
+                  className="inline-block"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </motion.div>
+              </>
+            )}
           </motion.button>
         </motion.form>
       )}
