@@ -33,16 +33,22 @@ export default function Footer() {
             transition={{ type: "spring", stiffness: 400 }}
           >
             <motion.div 
-              className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+              className="h-20 sm:h-24 w-20 sm:w-24 relative flex items-center justify-center"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >
-              <Image 
-                src="/replicq.svg" 
-                alt="Repliq logo" 
-                width={120} 
-                height={120}
-                className="w-auto h-20 sm:h-24 brightness-0 invert"
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-purple-400 via-cyan-400 to-emerald-400"
+                style={{
+                  maskImage: "url(/replicq.svg)",
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskImage: "url(/replicq.svg)",
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                }}
               />
             </motion.div>
           </motion.div>
