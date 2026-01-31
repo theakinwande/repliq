@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Repliq — Your Digital Identity, Decentralized",
-    description: "A new way to own your profile, your avatar, your reputation — all on-chain.",
+    description: "A new way to own your profile on-chain.",
   },
 };
 
